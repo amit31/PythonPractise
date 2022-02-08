@@ -9,10 +9,7 @@ class Solution:
                 nums[k]=nums[i]
                 k=k+1
             elif count<1:
-                
                 count=count+1
-                
-                
                 nums[k]=nums[i]
                 k=k+1
                 
