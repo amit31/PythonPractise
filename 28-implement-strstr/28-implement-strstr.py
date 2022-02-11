@@ -1,6 +1,6 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        k=1
+      
         if needle=="":
             return 0
         size=len(haystack)
