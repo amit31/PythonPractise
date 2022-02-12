@@ -4,7 +4,7 @@ class Solution:
         rep=''
         for i in range(0,lengths//2):
             rep=rep+s[i]
-            if lengths%len(s)==0:
+            if lengths%len(rep)==0:
                 if rep*(lengths//len(rep))==s:
                     return True
         return False
