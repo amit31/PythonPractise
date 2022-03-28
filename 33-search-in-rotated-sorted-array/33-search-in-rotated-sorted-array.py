@@ -5,12 +5,12 @@ class Solution:
         high=len(nums)-1
         nums1=sorted(nums)
         print(nums1)
-        k=0
+      
         while low <=high:
             mid=(low+high)//2
             if nums1[mid] == target:
-                k=nums1[mid]
-                return nums.index(k)
+                
+                return nums.index(target)
             elif target < nums1[mid]:
                  high = mid -1
             elif target > nums1[mid]:
