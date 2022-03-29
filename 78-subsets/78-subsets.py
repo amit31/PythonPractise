@@ -1,21 +1,20 @@
 class Solution:
-    def solution(self,nums,ans,cur,index):
-        
-        if(index>len(nums)):
-             return
+    
+    def makesubsets(self,nums:List[int],ans:List[int],cur:List[int],index):
+        if index >= len(nums):
+            return
         ans.append(cur[:])
         for i in range(index,len(nums)):
             if nums[i] not in cur:
                 cur.append(nums[i])
-                self.solution(nums,ans,cur,i+1)
+                self.makesubsets(nums,ans,cur,i)
                 cur.pop()
-        return 
+        
+        return
+    
     def subsets(self, nums: List[int]) -> List[List[int]]:
-         ans = []
-         cur = []
-         self.solution(nums,ans,cur,0)
-         return ans
-            
-            
-            
+        cur=[]
+        ans=[]
+        self.makesubsets(nums,ans,cur,0)
+        return ans
         
