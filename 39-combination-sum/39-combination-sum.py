@@ -1,23 +1,23 @@
 class Solution:
     
-    def add(self,ans,cur,candidates,target,index,sum):
-        
-        if sum==target:
+    def combination(self,candidates,target,ans,cur,add,index):
+        if add==target:
             ans.append(cur[:])
-        elif sum<target:
-            n=len(candidates)
-            for i in range(index,n):
+        elif add<target:
+            for i in range(index,len(candidates)):
+           
                 cur.append(candidates[i])
-                self.add(ans,cur,candidates,target,i,sum+candidates[i])
+                self.combination(candidates,target,ans,cur,add+candidates[i],i)
                 cur.pop()
-        
+            return
+   
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        
         
         ans=[]
         cur=[]
-        self.add(ans,cur,candidates,target,0,0)
-        
+        add=0
+        self.combination(candidates,target,ans,cur,add,0)
+       
         return ans
         
         
