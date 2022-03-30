@@ -1,23 +1,23 @@
 class Solution:
     
-    def combination(self,candidates,target,ans,cur,add,index):
-        if add==target:
-            ans.append(cur[:])
-        elif add<target:
-            for i in range(index,len(candidates)):
-           
-                cur.append(candidates[i])
-                self.combination(candidates,target,ans,cur,add+candidates[i],i)
-                cur.pop()
+     def makesubsets(self, nums: List[int], cur: List[int], ans: List[int], index, target):
+        if index == len(nums):
+
+            if target == 0:
+                ans.append(cur[:])
             return
+
+        if nums[index] <= target:
+            cur.append(nums[index])
+            self.makesubsets(nums, cur, ans, index , target - nums[index])
+            cur.remove(nums[index])
+        self.makesubsets(nums, cur, ans, index + 1, target)
    
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         
-        ans=[]
-        cur=[]
-        add=0
-        self.combination(candidates,target,ans,cur,add,0)
-       
+        cur = []
+        ans = []
+        self.makesubsets(candidates, cur, ans, 0, target)
         return ans
         
         
