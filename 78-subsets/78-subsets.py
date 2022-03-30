@@ -33,18 +33,14 @@ class Solution:
     def makesubsets(self,nums:List[int],ans:List[int],cur:List[int],index):
         if index >= len(nums):
             return
-        if cur not in ans:
-            ans.append(cur[:])
-#         for i in range(index,len(nums)):
-#             if nums[i] not in cur:
-#                 cur.append(nums[i])
-#                 self.makesubsets(nums,ans,cur,i)
-#                 cur.pop()
-        if nums[index] not in cur:
-            cur.append(nums[index])
-            self.makesubsets(nums,ans,cur,index)
-            cur.pop()
-        self.makesubsets(nums,ans,cur,index+1)  
+        
+        ans.append(cur[:])
+        for i in range(index,len(nums)):
+            if nums[i] not in cur:
+                cur.append(nums[i])
+                self.makesubsets(nums,ans,cur,i)
+                cur.pop()
+        
         return
     
     def subsets(self, nums: List[int]) -> List[List[int]]:
