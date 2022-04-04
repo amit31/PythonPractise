@@ -17,9 +17,12 @@ class Solution:
             med=med.next
             fast=fast.next
         
+            
         while fast is not None:
             fast=fast.next
             slow=slow.next
+           
+            print(f"slow is {slow.val}")
         
         
         med.val,slow.val=slow.val,med.val
