@@ -15,19 +15,11 @@ class Solution:
         for i in range(1,k+1):
             
             med=med.next
-            
-        
-        for i in range(1,k+1):
             fast=fast.next
-       
-            
-        print(f"fast value is {fast.val}")
         
-            
         while fast is not None:
             fast=fast.next
             slow=slow.next
-            print(slow.val)
         
         
         med.val,slow.val=slow.val,med.val
