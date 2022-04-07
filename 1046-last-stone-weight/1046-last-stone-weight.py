@@ -2,10 +2,10 @@ class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
         
         stones=sorted(stones)
-        print(stones)
+        
         
         big=len(stones)-1
-        print(stones[big])
+        
         
         
         while big >=1:
