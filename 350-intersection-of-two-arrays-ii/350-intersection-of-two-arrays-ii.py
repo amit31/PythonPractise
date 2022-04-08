@@ -3,8 +3,8 @@ class Solution:
     
         len1=len(nums1)
         len2=len(nums2)
-        if len2 > len1:
-            nums1,nums2=nums2,nums1
+        # if len2 > len1:
+        #     nums1,nums2=nums2,nums1
         m={}
         k=[]
         j=0
@@ -13,7 +13,6 @@ class Solution:
         print(m)
         
         for key,value in m.items():
-            print(key)
             j=0
             while j < len(nums2):
                 if nums2[j] == key and value>=1:
