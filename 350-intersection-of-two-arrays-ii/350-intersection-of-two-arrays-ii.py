@@ -10,7 +10,7 @@ class Solution:
         j=0
         for i in nums1:
             m[i]=m.get(i,0)+1
-        print(m)
+        
         
         for key,value in m.items():
             j=0
