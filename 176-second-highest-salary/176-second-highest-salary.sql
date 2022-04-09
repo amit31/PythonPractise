@@ -6,5 +6,5 @@
 select IFNULL(
 
 (select SecondHighestSalary from
-(select salary as SecondHighestSalary , dense_rank() Over ( ORDER BY salary desc) as denserank  from employee)temp
-where temp.denserank = 2 limit 1),NULL) as SecondHighestSalary
+(select distinct(salary) as SecondHighestSalary , dense_rank() Over ( ORDER BY salary desc) as denserank  from employee)temp
+where temp.denserank = 2 ),NULL) as SecondHighestSalary
