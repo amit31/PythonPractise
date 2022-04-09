@@ -2,4 +2,5 @@
 
 
 select temp.name as Department,temp.employeename as Employee ,temp.salary as Salary   from
-(select d.name,e.name as employeename,salary,dense_rank()   over ( partition by d.name order by salary desc ) as dr from employee e join department d on e.departmentId=d.id) temp where temp.dr in (1,2,3)
+(select d.name,e.name as employeename,salary,dense_rank()   over ( partition by d.name order by salary desc ) as dr from employee e join department d on e.departmentId=d.id)
+temp where temp.dr in (1,2,3)
