@@ -11,12 +11,12 @@ class Solution:
             
             k=k+1
         
-        print (m)
+        
         
         
         k=sorted(m.items(),key=lambda x:x[0])
         
-        print(k)
+        
         
         for i in k:
             j.append(i[1])
