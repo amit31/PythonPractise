@@ -12,7 +12,7 @@ class Solution:
         # shift the queue of k positions
         for _ in range(k):
             queue.appendleft(queue.pop())
-
+        
         # transform the queue into a 2D grid
         for i in range(rows):
             for j in range(cols):
